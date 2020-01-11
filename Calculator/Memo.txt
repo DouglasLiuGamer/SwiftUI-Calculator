@@ -1,0 +1,3 @@
+Push an alert when the result is "ERROR" -> This is a bug to be reported
+Parentheses auto completion -> Need to check whether valid -> Do it after coloring
+Grey out the equation when having the result -> Indicated that the equation can no longer be modified
