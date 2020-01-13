@@ -107,7 +107,7 @@ class Processor: ObservableObject {
             }
         case "ANS":
             if !ans.isEmpty {
-                return ans == "INFINITY" || ans == "-INFINITY" || ans == "ERROR"
+                return ans.contains("INFINITY") || ans == "NaN" || ans == "ERROR"
             } else {
                 return prevAns.isEmpty
                     || tokens.last?.type == .number
@@ -157,7 +157,7 @@ class Processor: ObservableObject {
 
     private func clearIfAns() {
         if !ans.isEmpty {
-            if ans == "INFINITY" || ans == "-INFINITY" || ans == "ERROR" {
+            if ans.contains("INFINITY") || ans == "NaN" || ans == "ERROR" {
                 prevAns.removeAll()
             } else {
                 prevAns = ans
@@ -191,6 +191,7 @@ class Processor: ObservableObject {
         if let result = expr.expressionValue(with: nil, context: nil) as? Double {
             ans = String(result)
                 .replacingOccurrences(of: "inf", with: "INFINITY")
+                .replacingOccurrences(of: "nan", with: "NaN")
         } else {
             ans = "ERROR"
         }
