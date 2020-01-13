@@ -82,7 +82,7 @@ class Processor: ObservableObject {
         }
 
         // TODO: Fancy output later
-        equation = ""
+        equation.removeAll()
         for token in tokens {
             equation.append(token.value)
         }

@@ -14,15 +14,15 @@ struct MainView: View {
     var body: some View {
         GeometryReader { geometry in
             VStack() {
-                EquationView()
+                ScreenView()
                     .padding([.horizontal, .top])
 
                 Divider()
-                    .padding()
+                    .padding(.horizontal)
 
                 PadView()
                     .frame(height: geometry.size.height * 0.6)
-                    .padding(.horizontal)
+                    .padding()
             }
         }
     }

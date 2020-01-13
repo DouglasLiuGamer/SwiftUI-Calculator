@@ -20,8 +20,11 @@ struct TextButton: View {
                 self.processor.receive(symbol: self.symbol)
             }
         }) {
-            Text(symbol)
-                .font(.system(.body, design: .monospaced))
+            Text(self.symbol)
+                .font(.system(
+                    size: 22,
+                    weight: .regular,
+                    design: .monospaced))
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }

@@ -21,7 +21,8 @@ struct ImageButton: View {
                 self.processor.receive(symbol: self.symbol)
             }
         }) {
-            Image(systemName: imageName)
+            Image(systemName: self.imageName)
+                .imageScale(.large)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
