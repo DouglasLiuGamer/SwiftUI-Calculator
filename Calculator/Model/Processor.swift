@@ -155,6 +155,14 @@ class Processor: ObservableObject {
         }
     }
 
+    func resetEquation() {
+        ans.removeAll()
+        equation.removeAll()
+
+        tokens.removeAll()
+        parenUnmatched = 0
+    }
+
     private var tokens: [Token] = []
     private var parenUnmatched: Int = 0
 

@@ -37,9 +37,15 @@ struct ScreenView: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
 
-                Image(systemName: "trash.fill")
-                    .imageScale(.large)
-                    .padding(.bottom)
+                if !processor.equation.isEmpty {
+                    Button(action: {
+                        self.processor.resetEquation()
+                    }) {
+                        Image(systemName: "trash.fill")
+                            .imageScale(.large)
+                            .padding(.vertical)
+                    }
+                }
             }
         }
     }
