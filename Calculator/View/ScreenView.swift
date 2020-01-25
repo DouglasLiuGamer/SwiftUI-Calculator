@@ -12,7 +12,7 @@ struct ScreenView: View {
     @EnvironmentObject var processor: Processor
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
+        VStack(spacing: 0) {
             HStack() {
                 Text("ANS=\(processor.prevAns)")
                     .font(.system(size: 22, weight: .regular, design: .monospaced))

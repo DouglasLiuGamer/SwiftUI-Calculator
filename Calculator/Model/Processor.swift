@@ -107,7 +107,7 @@ class Processor: ObservableObject {
             }
         case "ANS":
             if !ans.isEmpty {
-                return ans.contains("INFINITY") || ans == "NaN" || ans == "ERROR"
+                return ans == "INFINITY" || ans == "-INFINITY" || ans == "NaN"
             } else {
                 return prevAns.isEmpty
                     || tokens.last?.type == .number
@@ -121,9 +121,10 @@ class Processor: ObservableObject {
                 return tokens.isEmpty
                     || tokens.last?.type == .opt
                     || tokens.last?.type == .lparen
+                    || tokens.last?.type == .number && tokens.last!.value.last! == "."
             }
         case "-":
-            return false
+            return tokens.last?.type == .number && tokens.last!.value.last! == "."
         case "(":
             if !ans.isEmpty {
                 return false
@@ -139,6 +140,7 @@ class Processor: ObservableObject {
                 return parenUnmatched == 0
                     || tokens.last?.type == .opt
                     || tokens.last?.type == .lparen
+                    || tokens.last?.type == .number && tokens.last!.value.last! == "."
             }
         case "<":
             return tokens.isEmpty
@@ -147,6 +149,7 @@ class Processor: ObservableObject {
                 || !ans.isEmpty
                 || tokens.isEmpty
                 || tokens.last?.type == .opt
+                || tokens.last?.type == .number && tokens.last!.value.last! == "."
         default:
             return true
         }
@@ -157,7 +160,7 @@ class Processor: ObservableObject {
 
     private func clearIfAns() {
         if !ans.isEmpty {
-            if ans.contains("INFINITY") || ans == "NaN" || ans == "ERROR" {
+            if ans == "INFINITY" || ans == "-INFINITY" || ans == "NaN" {
                 prevAns.removeAll()
             } else {
                 prevAns = ans
@@ -193,6 +196,7 @@ class Processor: ObservableObject {
                 .replacingOccurrences(of: "inf", with: "INFINITY")
                 .replacingOccurrences(of: "nan", with: "NaN")
         } else {
+            // TODO: Issue an alert and clear.
             ans = "ERROR"
         }
     }
