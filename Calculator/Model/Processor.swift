@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-class Token {
+struct Token {
     enum TokenType {
         case number, ans, opt, lparen, rparen
     }
@@ -25,7 +25,10 @@ class Token {
 class Processor: ObservableObject {
     @Published var prevAns = ""
     @Published var ans = ""
-    @Published var equation = ""
+    @Published var tokens: [Token] = []
+
+    // Delete later
+    var equation = ""
 
     func receive(symbol: String) {
         // The reveived symbol must be valid, since invalid buttons are disabled
@@ -33,14 +36,18 @@ class Processor: ObservableObject {
         case "0", "1", "2", "3", "4", "5", "6", "7", "8", "9":
             clearIfAns()
             if tokens.last?.type == .number {
-                tokens.last!.value.append(symbol)
+                var token = tokens.popLast()!
+                token.value.append(symbol)
+                tokens.append(token)
             } else {
                 tokens.append(Token(type: .number, value: symbol))
             }
         case ".":
             clearIfAns()
             if tokens.last?.type == .number {
-                tokens.last!.value.append(symbol)
+                var token = tokens.popLast()!
+                token.value.append(symbol)
+                tokens.append(token)
             } else {
                 tokens.append(Token(type: .number, value: symbol))
             }
@@ -63,17 +70,18 @@ class Processor: ObservableObject {
                 break
             }
 
-            tokens.last?.value.removeLast()
+            var token = tokens.popLast()!
+            token.value.removeLast()
 
-            if tokens.last?.type == .lparen {
+            if token.type == .lparen {
                 parenUnmatched -= 1
             }
-            if tokens.last?.type == .rparen {
+            if token.type == .rparen {
                 parenUnmatched += 1
             }
 
-            if tokens.last?.value.isEmpty ?? false || tokens.last?.type == .ans {
-                tokens.removeLast()
+            if token.type != .ans && !token.value.isEmpty {
+                tokens.append(token)
             }
         case "=":
             eval()
@@ -163,7 +171,6 @@ class Processor: ObservableObject {
         parenUnmatched = 0
     }
 
-    private var tokens: [Token] = []
     private var parenUnmatched: Int = 0
 
     private func clearIfAns() {
