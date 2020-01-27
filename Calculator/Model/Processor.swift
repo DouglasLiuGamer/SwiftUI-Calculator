@@ -1,5 +1,5 @@
 //
-//  Equation.swift
+//  Processor.swift
 //  Calculator
 //
 //  Created by Douglas Liu on 29/12/2019.

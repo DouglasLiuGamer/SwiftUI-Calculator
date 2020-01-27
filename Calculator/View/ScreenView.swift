@@ -14,7 +14,7 @@ struct ScreenView: View {
     var body: some View {
         VStack(spacing: 0) {
             HStack() {
-                Text("ANS=\(processor.prevAns)")
+                Text(processor.prevAns.isEmpty ? "" : "ANS=\(processor.prevAns)")
                     .font(.system(size: 22, weight: .regular, design: .monospaced))
                     .lineLimit(1)
 
@@ -29,12 +29,12 @@ struct ScreenView: View {
 
             HStack(alignment: .bottom) {
                 ScrollView(.vertical, showsIndicators: true) {
-                    Text(processor.equation)
-                        .font(.system(size: 22, weight: .regular, design: .monospaced))
-                        .frame(maxWidth: .infinity, alignment: .leading)
+                    EquationView(tokens: processor.tokens)
+
                     Text(processor.ans)
                         .font(.system(size: 35, weight: .bold, design: .monospaced))
                         .frame(maxWidth: .infinity, alignment: .leading)
+                        .lineLimit(nil)
                 }
 
                 if !processor.equation.isEmpty {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		771D9CC823DEE06F006E10B6 /* EquationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 771D9CC723DEE06F006E10B6 /* EquationView.swift */; };
 		772EC96323B8518900D29E36 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772EC96223B8518900D29E36 /* AppDelegate.swift */; };
 		772EC96523B8518900D29E36 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772EC96423B8518900D29E36 /* SceneDelegate.swift */; };
 		772EC96923B8518A00D29E36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 772EC96823B8518A00D29E36 /* Assets.xcassets */; };
@@ -23,6 +24,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		771D9CC723DEE06F006E10B6 /* EquationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquationView.swift; sourceTree = "<group>"; };
 		772EC95F23B8518900D29E36 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		772EC96223B8518900D29E36 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		772EC96423B8518900D29E36 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,7 +40,6 @@
 		77BCC6B223BC630D002009C1 /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
 		77BCC6B423BC7710002009C1 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		77BCC6B623BC7E86002009C1 /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
-		77FAA5AD23DC732C00B1FA48 /* QuickTesting.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = QuickTesting.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +81,6 @@
 				772EC97023B8518A00D29E36 /* Info.plist */,
 				772EC96A23B8518A00D29E36 /* Preview Content */,
 				7736288323C9B7AA0006C194 /* Memo.txt */,
-				77FAA5AD23DC732C00B1FA48 /* QuickTesting.playground */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -98,6 +98,7 @@
 			children = (
 				772EC97723B8543000D29E36 /* MainView.swift */,
 				772EC97923B8550F00D29E36 /* ScreenView.swift */,
+				771D9CC723DEE06F006E10B6 /* EquationView.swift */,
 				77BCC6B023BC62DA002009C1 /* PadView.swift */,
 				77BCC6B223BC630D002009C1 /* TextButton.swift */,
 				77BCC6B623BC7E86002009C1 /* ImageButton.swift */,
@@ -194,6 +195,7 @@
 				772EC97D23B8599300D29E36 /* Processor.swift in Sources */,
 				772EC97A23B8550F00D29E36 /* ScreenView.swift in Sources */,
 				772EC96523B8518900D29E36 /* SceneDelegate.swift in Sources */,
+				771D9CC823DEE06F006E10B6 /* EquationView.swift in Sources */,
 				77BCC6B323BC630D002009C1 /* TextButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
