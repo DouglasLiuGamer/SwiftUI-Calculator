@@ -9,8 +9,6 @@
 import SwiftUI
 
 struct MainView: View {
-    @EnvironmentObject var processor: Processor
-
     var body: some View {
         GeometryReader { geometry in
             VStack() {

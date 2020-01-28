@@ -14,14 +14,19 @@ struct ScreenView: View {
     var body: some View {
         VStack(spacing: 0) {
             HStack() {
-                Text(processor.prevAns == nil ? "" : "ANS=\((processor.prevAns!))")
-                    .font(Font.system(size: 22, weight: .regular, design: .monospaced))
-                    .lineLimit(1)
+                AnsView(
+                    ans: processor.prevAns,
+                    precision: processor.precision
+                )
 
                 Spacer()
 
-                Image(systemName: "slider.horizontal.3")
-                    .imageScale(.large)
+                Button(action: {
+                    self.processor.precision += 1
+                }) {
+                    Image(systemName: "slider.horizontal.3")
+                        .imageScale(.large)
+                }
             }
 
             Divider()
@@ -31,10 +36,10 @@ struct ScreenView: View {
                 ScrollView(.vertical, showsIndicators: true) {
                     EquationView(tokens: processor.tokens)
 
-                    Text(processor.ans == nil ? "" : "\(processor.ans!)")
-                        .font(Font.system(size: 35, weight: .bold, design: .monospaced))
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .lineLimit(nil)
+                    ResultView(
+                        result: processor.ans,
+                        precision: processor.precision
+                    )
                 }
 
                 if !processor.tokens.isEmpty {

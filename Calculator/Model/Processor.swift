@@ -23,6 +23,8 @@ struct Token {
 }
 
 class Processor: ObservableObject {
+    @Published var precision = 4
+
     @Published var prevAns: Double? = nil
     @Published var ans: Double? = nil
     @Published var tokens: [Token] = []
