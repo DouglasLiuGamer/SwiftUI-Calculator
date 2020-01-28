@@ -1,2 +1,3 @@
 Parentheses auto completion -> Need to check whether valid -> Do it after coloring
 Grey out the equation when having the result -> Indicated that the equation can no longer be modified
+Issue an alert when potential error occurs

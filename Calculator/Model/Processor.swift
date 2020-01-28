@@ -23,12 +23,9 @@ struct Token {
 }
 
 class Processor: ObservableObject {
-    @Published var prevAns = ""
-    @Published var ans = ""
+    @Published var prevAns: Double? = nil
+    @Published var ans: Double? = nil
     @Published var tokens: [Token] = []
-
-    // Delete later
-    var equation = ""
 
     func receive(symbol: String) {
         // The reveived symbol must be valid, since invalid buttons are disabled
@@ -65,8 +62,8 @@ class Processor: ObservableObject {
             parenUnmatched -= 1
             tokens.append(Token(type: .rparen, value: symbol))
         case "<":
-            if !ans.isEmpty {
-                ans.removeAll()
+            if ans != nil {
+                ans = nil
                 break
             }
 
@@ -88,25 +85,19 @@ class Processor: ObservableObject {
         default:
             break
         }
-
-        // TODO: Fancy output later
-        equation.removeAll()
-        for token in tokens {
-            equation.append(token.value)
-        }
     }
 
     func isDisabled(symbol: String) -> Bool {
         switch symbol {
         case "0", "1", "2", "3", "4", "5", "6", "7", "8", "9":
-            if !ans.isEmpty {
+            if ans != nil {
                 return false
             } else {
                 return tokens.last?.type == .ans
                     || tokens.last?.type == .rparen
             }
         case ".":
-            if !ans.isEmpty {
+            if ans != nil {
                 return false
             } else {
                 return tokens.last?.type == .ans
@@ -114,16 +105,16 @@ class Processor: ObservableObject {
                     || tokens.last?.type == .number && tokens.last!.value.contains(".")
             }
         case "ANS":
-            if !ans.isEmpty {
-                return ans == "INFINITY" || ans == "-INFINITY" || ans == "NaN"
+            if ans != nil {
+                return ans!.isNaN || ans!.isInfinite
             } else {
-                return prevAns.isEmpty
+                return prevAns == nil
                     || tokens.last?.type == .number
                     || tokens.last?.type == .ans
                     || tokens.last?.type == .rparen
             }
         case "+", "⨯", "÷":
-            if !ans.isEmpty {
+            if ans != nil {
                 return true
             } else {
                 return tokens.isEmpty
@@ -134,7 +125,7 @@ class Processor: ObservableObject {
         case "-":
             return tokens.last?.type == .number && tokens.last!.value.last! == "."
         case "(":
-            if !ans.isEmpty {
+            if ans != nil {
                 return false
             } else {
                 return tokens.last?.type == .number
@@ -142,7 +133,7 @@ class Processor: ObservableObject {
                     || tokens.last?.type == .rparen
             }
         case ")":
-            if !ans.isEmpty {
+            if ans != nil {
                 return true
             } else {
                 return parenUnmatched == 0
@@ -154,7 +145,7 @@ class Processor: ObservableObject {
             return tokens.isEmpty
         case "=":
             return parenUnmatched != 0
-                || !ans.isEmpty
+                || ans != nil
                 || tokens.isEmpty
                 || tokens.last?.type == .opt
                 || tokens.last?.type == .number && tokens.last!.value.last! == "."
@@ -164,9 +155,7 @@ class Processor: ObservableObject {
     }
 
     func resetEquation() {
-        ans.removeAll()
-        equation.removeAll()
-
+        ans = nil
         tokens.removeAll()
         parenUnmatched = 0
     }
@@ -174,13 +163,13 @@ class Processor: ObservableObject {
     private var parenUnmatched: Int = 0
 
     private func clearIfAns() {
-        if !ans.isEmpty {
-            if ans == "INFINITY" || ans == "-INFINITY" || ans == "NaN" {
-                prevAns.removeAll()
+        if ans != nil {
+            if ans!.isNaN || ans!.isInfinite {
+                prevAns = nil
             } else {
                 prevAns = ans
             }
-            ans.removeAll()
+            ans = nil
             tokens.removeAll()
         }
     }
@@ -192,10 +181,7 @@ class Processor: ObservableObject {
                 s.append(token.value)
                 s.append(".0")
             } else if token.type == .ans {
-                s.append(prevAns)
-                if !prevAns.contains(".") {
-                    s.append(".0")
-                }
+                s.append(String(prevAns!))
             } else if token.value == "⨯" {
                 s.append("*")
             } else if token.value == "÷" {
@@ -206,13 +192,6 @@ class Processor: ObservableObject {
         }
 
         let expr = NSExpression(format: s)
-        if let result = expr.expressionValue(with: nil, context: nil) as? Double {
-            ans = String(result)
-                .replacingOccurrences(of: "inf", with: "INFINITY")
-                .replacingOccurrences(of: "nan", with: "NaN")
-        } else {
-            // TODO: Issue an alert and clear.
-            ans = "ERROR"
-        }
+        ans = expr.expressionValue(with: nil, context: nil) as? Double
     }
 }
