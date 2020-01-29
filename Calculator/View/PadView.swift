@@ -25,14 +25,14 @@ struct PadView: View {
                     symbol: "(",
                     disabled: processor.isDisabled(symbol: "(")
                 ).buttonStyle(
-                    OperantButtonStyle(disabled: processor.isDisabled(symbol: "("))
+                    ParenButtonStyle(disabled: processor.isDisabled(symbol: "("))
                 )
 
                 TextButton(
                     symbol: ")",
                     disabled: processor.isDisabled(symbol: ")")
                 ).buttonStyle(
-                    OperantButtonStyle(disabled: processor.isDisabled(symbol: ")"))
+                    ParenButtonStyle(disabled: processor.isDisabled(symbol: ")"))
                 )
 
                 ImageButton(

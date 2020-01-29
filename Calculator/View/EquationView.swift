@@ -10,6 +10,7 @@ import SwiftUI
 
 struct EquationView: View {
     var tokens: [Token]
+    var dimmed: Bool
 
     var body: some View {
         let maxLength = 20
@@ -49,12 +50,20 @@ struct EquationView: View {
         }
 
         return equation
-            .font(.system(size: 22, weight: .regular, design: .monospaced))
+            .font(.system(size: 22, weight: .semibold, design: .monospaced))
+            .opacity(dimmed ? 0.4 : 1)
             .frame(maxWidth: .infinity, alignment: .leading)
     }
 
     private func tokenColor(_ type: Token.TokenType) -> Color {
-        return type == .number ? Color.black : Color.blue
+        switch type {
+        case .number, .ans:
+            return Color("Text")
+        case .opt:
+            return Color("Operator")
+        case .lparen, .rparen:
+            return Color("Parentheses")
+        }
     }
 }
 
@@ -67,7 +76,10 @@ struct Equation_Previews: PreviewProvider {
             Token(type: .number, value: "123456"),
             Token(type: .opt, value: "+"),
             Token(type: .number, value: "12345678901234567890")
-        ])
+            ],
+            dimmed: true
+        )
+            .previewLayout(.sizeThatFits)
     }
 }
 #endif

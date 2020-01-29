@@ -37,6 +37,7 @@ struct ResultView: View {
 
         return Text(text)
             .font(Font.system(size: 35, weight: .bold, design: .monospaced))
+            .foregroundColor(Color("Text"))
             .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
@@ -45,6 +46,7 @@ struct ResultView: View {
 struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
         ResultView(result: -1.245875e+1, precision: 4)
+            .previewLayout(.sizeThatFits)
     }
 }
 #endif

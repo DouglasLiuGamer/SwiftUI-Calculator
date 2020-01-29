@@ -23,7 +23,7 @@ struct TextButton: View {
             Text(self.symbol)
                 .font(.system(
                     size: 22,
-                    weight: .regular,
+                    weight: .semibold,
                     design: .monospaced))
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         }

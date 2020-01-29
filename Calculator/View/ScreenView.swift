@@ -16,7 +16,8 @@ struct ScreenView: View {
             HStack() {
                 AnsView(
                     ans: processor.prevAns,
-                    precision: processor.precision
+                    precision: processor.precision,
+                    dimmed: processor.ans != nil
                 )
 
                 Spacer()
@@ -26,6 +27,7 @@ struct ScreenView: View {
                 }) {
                     Image(systemName: "slider.horizontal.3")
                         .imageScale(.large)
+                        .foregroundColor(Color("Operator"))
                 }
             }
 
@@ -34,7 +36,10 @@ struct ScreenView: View {
 
             HStack(alignment: .bottom) {
                 ScrollView(.vertical, showsIndicators: true) {
-                    EquationView(tokens: processor.tokens)
+                    EquationView(
+                        tokens: processor.tokens,
+                        dimmed: processor.ans != nil
+                    )
 
                     ResultView(
                         result: processor.ans,
@@ -48,6 +53,7 @@ struct ScreenView: View {
                     }) {
                         Image(systemName: "trash.fill")
                             .imageScale(.large)
+                            .foregroundColor(Color("Operator"))
                             .padding(.vertical)
                     }
                 }
