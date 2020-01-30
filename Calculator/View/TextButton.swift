@@ -18,7 +18,7 @@ struct TextButton: View {
         Button(action: {
             if (!self.disabled) {
                 self.processor.receive(symbol: self.symbol)
-                VibrationManager.onImpactOccured()
+                Vibration.impactOccured()
             }
         }) {
             Text(self.symbol)

@@ -17,7 +17,7 @@
 		772EC97A23B8550F00D29E36 /* ScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772EC97923B8550F00D29E36 /* ScreenView.swift */; };
 		772EC97D23B8599300D29E36 /* Processor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772EC97C23B8599300D29E36 /* Processor.swift */; };
 		7736288423C9B7AA0006C194 /* Memo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7736288323C9B7AA0006C194 /* Memo.txt */; };
-		7790EA4523E2AE7F00439EE9 /* VibrationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7790EA4423E2AE7F00439EE9 /* VibrationManager.swift */; };
+		7790EA4523E2AE7F00439EE9 /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7790EA4423E2AE7F00439EE9 /* Vibration.swift */; };
 		77BCC6B123BC62DA002009C1 /* PadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BCC6B023BC62DA002009C1 /* PadView.swift */; };
 		77BCC6B323BC630D002009C1 /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BCC6B223BC630D002009C1 /* TextButton.swift */; };
 		77BCC6B523BC7710002009C1 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BCC6B423BC7710002009C1 /* ButtonStyle.swift */; };
@@ -39,7 +39,7 @@
 		772EC97923B8550F00D29E36 /* ScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenView.swift; sourceTree = "<group>"; };
 		772EC97C23B8599300D29E36 /* Processor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Processor.swift; sourceTree = "<group>"; };
 		7736288323C9B7AA0006C194 /* Memo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Memo.txt; sourceTree = "<group>"; };
-		7790EA4423E2AE7F00439EE9 /* VibrationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VibrationManager.swift; sourceTree = "<group>"; };
+		7790EA4423E2AE7F00439EE9 /* Vibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration.swift; sourceTree = "<group>"; };
 		77BCC6B023BC62DA002009C1 /* PadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadView.swift; sourceTree = "<group>"; };
 		77BCC6B223BC630D002009C1 /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
 		77BCC6B423BC7710002009C1 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
@@ -80,7 +80,7 @@
 			children = (
 				772EC97B23B8597F00D29E36 /* Model */,
 				772EC97623B8541600D29E36 /* View */,
-				7790EA4623E2B0FC00439EE9 /* Manager */,
+				7790EA4623E2B0FC00439EE9 /* Utility */,
 				772EC96223B8518900D29E36 /* AppDelegate.swift */,
 				772EC96423B8518900D29E36 /* SceneDelegate.swift */,
 				772EC96823B8518A00D29E36 /* Assets.xcassets */,
@@ -124,12 +124,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		7790EA4623E2B0FC00439EE9 /* Manager */ = {
+		7790EA4623E2B0FC00439EE9 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
-				7790EA4423E2AE7F00439EE9 /* VibrationManager.swift */,
+				7790EA4423E2AE7F00439EE9 /* Vibration.swift */,
 			);
-			path = Manager;
+			path = Utility;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -211,7 +211,7 @@
 				772EC97823B8543000D29E36 /* MainView.swift in Sources */,
 				77BCC6B123BC62DA002009C1 /* PadView.swift in Sources */,
 				77BCC6B723BC7E86002009C1 /* ImageButton.swift in Sources */,
-				7790EA4523E2AE7F00439EE9 /* VibrationManager.swift in Sources */,
+				7790EA4523E2AE7F00439EE9 /* Vibration.swift in Sources */,
 				772EC97D23B8599300D29E36 /* Processor.swift in Sources */,
 				772EC97A23B8550F00D29E36 /* ScreenView.swift in Sources */,
 				772EC96523B8518900D29E36 /* SceneDelegate.swift in Sources */,
