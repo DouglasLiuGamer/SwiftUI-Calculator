@@ -19,6 +19,7 @@ struct ImageButton: View {
         Button(action: {
             if (!self.disabled) {
                 self.processor.receive(symbol: self.symbol)
+                VibrationManager.onImpactOccured()
             }
         }) {
             Image(systemName: self.imageName)

@@ -50,6 +50,7 @@ struct ScreenView: View {
                 if !processor.tokens.isEmpty {
                     Button(action: {
                         self.processor.resetEquation()
+                        VibrationManager.onImpactOccured()
                     }) {
                         Image(systemName: "trash.fill")
                             .imageScale(.large)
