@@ -1,3 +1,2 @@
 Parentheses auto completion -> Need to check whether valid
-Vibration
-Settings
+Setting Menu
