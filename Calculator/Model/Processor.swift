@@ -23,7 +23,8 @@ struct Token {
 }
 
 class Processor: ObservableObject {
-    @Published var precision = 4
+    @Published var precision = UserDefaults.standard.integer(forKey: "Precision")
+    @Published var allowVibration = UserDefaults.standard.bool(forKey: "Vibration")
 
     @Published var prevAns: Double? = nil
     @Published var ans: Double? = nil

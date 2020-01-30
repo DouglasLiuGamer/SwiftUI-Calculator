@@ -17,8 +17,10 @@ struct TextButton: View {
     var body: some View {
         Button(action: {
             if (!self.disabled) {
+                if self.processor.allowVibration {
+                    Vibration.impactOccured()
+                }
                 self.processor.receive(symbol: self.symbol)
-                Vibration.impactOccured()
             }
         }) {
             Text(self.symbol)

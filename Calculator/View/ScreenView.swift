@@ -49,8 +49,10 @@ struct ScreenView: View {
 
                 if !processor.tokens.isEmpty {
                     Button(action: {
+                        if self.processor.allowVibration {
+                            Vibration.impactOccured()
+                        }
                         self.processor.resetEquation()
-                        Vibration.impactOccured()
                     }) {
                         Image(systemName: "trash.fill")
                             .imageScale(.large)
