@@ -9,8 +9,6 @@
 import SwiftUI
 
 struct PadView: View {
-    @EnvironmentObject var processor: Processor
-
     var body: some View {
         VStack {
             HStack {
@@ -166,6 +164,8 @@ struct PadView: View {
             }
         }
     }
+
+    @EnvironmentObject private var processor: Processor
 }
 
 #if DEBUG

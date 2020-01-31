@@ -9,8 +9,6 @@
 import SwiftUI
 
 struct SettingView: View {
-    @EnvironmentObject var processor: Processor
-
     var body: some View {
         VStack(spacing: 0) {
             Text("Settings")
@@ -47,6 +45,8 @@ struct SettingView: View {
         }
         .padding()
     }
+
+    @EnvironmentObject private var processor: Processor
 }
 
 #if DEBUG

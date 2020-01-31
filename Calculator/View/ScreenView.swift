@@ -9,9 +9,6 @@
 import SwiftUI
 
 struct ScreenView: View {
-    @State var showSettings = false
-    @EnvironmentObject var processor: Processor
-
     var body: some View {
         VStack(spacing: 0) {
             HStack() {
@@ -63,6 +60,9 @@ struct ScreenView: View {
             }
         }
     }
+
+    @State private var showSettings = false
+    @EnvironmentObject private var processor: Processor
 }
 
 #if DEBUG

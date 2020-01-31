@@ -9,8 +9,6 @@
 import SwiftUI
 
 struct TextButton: View {
-    @EnvironmentObject var processor: Processor
-
     var symbol: String
     var disabled: Bool
 
@@ -31,6 +29,8 @@ struct TextButton: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
+
+    @EnvironmentObject private var processor: Processor
 }
 
 #if DEBUG

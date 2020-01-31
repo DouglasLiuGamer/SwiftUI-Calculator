@@ -9,8 +9,6 @@
 import SwiftUI
 
 struct ImageButton: View {
-    @EnvironmentObject var processor: Processor
-
     var symbol: String
     var imageName: String
     var disabled: Bool
@@ -29,6 +27,8 @@ struct ImageButton: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
+
+    @EnvironmentObject private var processor: Processor
 }
 
 #if DEBUG

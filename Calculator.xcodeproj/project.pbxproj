@@ -16,7 +16,6 @@
 		772EC97823B8543000D29E36 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772EC97723B8543000D29E36 /* MainView.swift */; };
 		772EC97A23B8550F00D29E36 /* ScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772EC97923B8550F00D29E36 /* ScreenView.swift */; };
 		772EC97D23B8599300D29E36 /* Processor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772EC97C23B8599300D29E36 /* Processor.swift */; };
-		7736288423C9B7AA0006C194 /* Memo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7736288323C9B7AA0006C194 /* Memo.txt */; };
 		7790EA4523E2AE7F00439EE9 /* Vibration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7790EA4423E2AE7F00439EE9 /* Vibration.swift */; };
 		77BCC6B123BC62DA002009C1 /* PadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BCC6B023BC62DA002009C1 /* PadView.swift */; };
 		77BCC6B323BC630D002009C1 /* TextButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BCC6B223BC630D002009C1 /* TextButton.swift */; };
@@ -39,7 +38,6 @@
 		772EC97723B8543000D29E36 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		772EC97923B8550F00D29E36 /* ScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenView.swift; sourceTree = "<group>"; };
 		772EC97C23B8599300D29E36 /* Processor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Processor.swift; sourceTree = "<group>"; };
-		7736288323C9B7AA0006C194 /* Memo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = Memo.txt; sourceTree = "<group>"; };
 		7790EA4423E2AE7F00439EE9 /* Vibration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vibration.swift; sourceTree = "<group>"; };
 		77BCC6B023BC62DA002009C1 /* PadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PadView.swift; sourceTree = "<group>"; };
 		77BCC6B223BC630D002009C1 /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
@@ -89,7 +87,6 @@
 				772EC96D23B8518A00D29E36 /* LaunchScreen.storyboard */,
 				772EC97023B8518A00D29E36 /* Info.plist */,
 				772EC96A23B8518A00D29E36 /* Preview Content */,
-				7736288323C9B7AA0006C194 /* Memo.txt */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -193,7 +190,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7736288423C9B7AA0006C194 /* Memo.txt in Resources */,
 				772EC96F23B8518A00D29E36 /* LaunchScreen.storyboard in Resources */,
 				772EC96C23B8518A00D29E36 /* Preview Assets.xcassets in Resources */,
 				772EC96923B8518A00D29E36 /* Assets.xcassets in Resources */,

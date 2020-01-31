@@ -1,2 +1,0 @@
-Parentheses auto completion -> Need to check whether valid
-Setting Menu
