@@ -9,14 +9,11 @@
 import SwiftUI
 
 struct ResultView: View {
-    var result: Double?
-    var precision: Int
-
     var body: some View {
         var text = ""
 
-        if let result = result {
-            text = String(format: "%.\(precision)f", result)
+        if let result = processor.ans {
+            text = String(format: "%.\(processor.precision)f", result)
 
             if result.isNaN {
                 text = "NaN"
@@ -40,12 +37,19 @@ struct ResultView: View {
             .foregroundColor(Color("Operand"))
             .frame(maxWidth: .infinity, alignment: .leading)
     }
+
+    @EnvironmentObject private var processor: Processor
 }
 
 #if DEBUG
 struct ResultView_Previews: PreviewProvider {
     static var previews: some View {
-        ResultView(result: -1.245875e+1, precision: 4)
+        let processor = Processor()
+        processor.ans = 123.45678
+        processor.precision = 4
+
+        return ResultView()
+            .environmentObject(processor)
             .previewLayout(.sizeThatFits)
     }
 }

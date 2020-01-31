@@ -12,11 +12,7 @@ struct ScreenView: View {
     var body: some View {
         VStack(spacing: 0) {
             HStack() {
-                AnsView(
-                    ans: processor.prevAns,
-                    precision: processor.precision,
-                    dimmed: processor.ans != nil
-                )
+                AnsView()
 
                 Spacer()
 
@@ -37,15 +33,8 @@ struct ScreenView: View {
 
             HStack(alignment: .bottom) {
                 ScrollView(.vertical, showsIndicators: true) {
-                    EquationView(
-                        tokens: processor.tokens,
-                        dimmed: processor.ans != nil
-                    )
-
-                    ResultView(
-                        result: processor.ans,
-                        precision: processor.precision
-                    )
+                    EquationView()
+                    ResultView()
                 }
 
                 if !processor.tokens.isEmpty {

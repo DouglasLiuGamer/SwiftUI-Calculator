@@ -38,6 +38,8 @@ class Processor: ObservableObject {
     @Published var ans: Double? = nil
     @Published var tokens: [Token] = []
 
+    var parenUnmatched: Int = 0
+
     func receive(symbol: String) {
         // The reveived symbol must be valid, since invalid buttons are disabled
         switch symbol {
@@ -92,6 +94,10 @@ class Processor: ObservableObject {
                 tokens.append(token)
             }
         case "=":
+            while parenUnmatched > 0 {
+                tokens.append(Token(type: .rparen, value: ")"))
+                parenUnmatched -= 1
+            }
             eval()
         default:
             break
@@ -155,10 +161,10 @@ class Processor: ObservableObject {
         case "<":
             return tokens.isEmpty
         case "=":
-            return parenUnmatched != 0
-                || ans != nil
+            return ans != nil
                 || tokens.isEmpty
                 || tokens.last?.type == .opt
+                || tokens.last?.type == .lparen
                 || tokens.last?.type == .number && tokens.last!.value.last! == "."
         default:
             return true
@@ -171,8 +177,6 @@ class Processor: ObservableObject {
         parenUnmatched = 0
     }
 
-    private var parenUnmatched: Int = 0
-
     private func clearIfAns() {
         if ans != nil {
             if ans!.isNaN || ans!.isInfinite {
@@ -180,8 +184,7 @@ class Processor: ObservableObject {
             } else {
                 prevAns = ans
             }
-            ans = nil
-            tokens.removeAll()
+            resetEquation()
         }
     }
 

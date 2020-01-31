@@ -9,15 +9,12 @@
 import SwiftUI
 
 struct EquationView: View {
-    var tokens: [Token]
-    var dimmed: Bool
-
     var body: some View {
+        var equation = Text("")
         let maxLength = 20
         var length = 0
 
-        var equation = Text("")
-        for token in tokens {
+        for token in processor.tokens {
             var text = ""
 
             if length + token.value.count > maxLength {
@@ -49,11 +46,26 @@ struct EquationView: View {
                 .foregroundColor(tokenColor(token.type))
         }
 
+        for _ in 0..<processor.parenUnmatched {
+            if length + 1 > maxLength {
+                length = 0
+                equation = equation + Text("\n)")
+                    .foregroundColor(tokenColor(.rparen).opacity(0.4))
+            } else {
+                equation = equation + Text(")")
+                    .foregroundColor(tokenColor(.rparen).opacity(0.4))
+            }
+
+            length += 1
+        }
+
         return equation
             .font(.system(size: 22, weight: .semibold, design: .monospaced))
-            .opacity(dimmed ? 0.4 : 1)
+            .opacity(processor.ans == nil ? 1 : 0.4)
             .frame(maxWidth: .infinity, alignment: .leading)
     }
+
+    @EnvironmentObject private var processor: Processor
 
     private func tokenColor(_ type: Token.TokenType) -> Color {
         switch type {
@@ -70,15 +82,19 @@ struct EquationView: View {
 #if DEBUG
 struct Equation_Previews: PreviewProvider {
     static var previews: some View {
-        EquationView(tokens: [
+        let processor = Processor()
+        processor.tokens = [
             Token(type: .number, value: "1234"),
             Token(type: .opt, value: "+"),
+            Token(type: .lparen, value: "("),
             Token(type: .number, value: "123456"),
             Token(type: .opt, value: "+"),
             Token(type: .number, value: "12345678901234567890")
-            ],
-            dimmed: true
-        )
+        ]
+        processor.parenUnmatched = 1
+
+        return EquationView()
+            .environmentObject(processor)
             .previewLayout(.sizeThatFits)
     }
 }
