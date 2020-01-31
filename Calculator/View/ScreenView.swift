@@ -9,6 +9,7 @@
 import SwiftUI
 
 struct ScreenView: View {
+    @State var showSettings = false
     @EnvironmentObject var processor: Processor
 
     var body: some View {
@@ -23,10 +24,14 @@ struct ScreenView: View {
                 Spacer()
 
                 Button(action: {
-                    self.processor.precision += 1
+                    self.showSettings = true
                 }) {
                     Image(systemName: "slider.horizontal.3")
                         .imageScale(.large)
+                }
+                .sheet(isPresented: $showSettings) {
+                    SettingView()
+                        .environmentObject(self.processor)
                 }
             }
 
@@ -48,9 +53,6 @@ struct ScreenView: View {
 
                 if !processor.tokens.isEmpty {
                     Button(action: {
-                        if self.processor.allowVibration {
-                            Vibration.impactOccured()
-                        }
                         self.processor.resetEquation()
                     }) {
                         Image(systemName: "trash.fill")

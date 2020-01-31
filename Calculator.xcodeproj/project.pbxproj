@@ -24,6 +24,7 @@
 		77BCC6B723BC7E86002009C1 /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77BCC6B623BC7E86002009C1 /* ImageButton.swift */; };
 		77D252AD23E034030058C470 /* ResultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D252AC23E034030058C470 /* ResultView.swift */; };
 		77D252AF23E03B3A0058C470 /* AnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D252AE23E03B3A0058C470 /* AnsView.swift */; };
+		77DAE08A23E40F440062D846 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DAE08923E40F440062D846 /* SettingView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		77BCC6B623BC7E86002009C1 /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
 		77D252AC23E034030058C470 /* ResultView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultView.swift; sourceTree = "<group>"; };
 		77D252AE23E03B3A0058C470 /* AnsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnsView.swift; sourceTree = "<group>"; };
+		77DAE08923E40F440062D846 /* SettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			children = (
 				772EC97723B8543000D29E36 /* MainView.swift */,
 				772EC97923B8550F00D29E36 /* ScreenView.swift */,
+				77DAE08923E40F440062D846 /* SettingView.swift */,
 				771D9CC723DEE06F006E10B6 /* EquationView.swift */,
 				77D252AE23E03B3A0058C470 /* AnsView.swift */,
 				77D252AC23E034030058C470 /* ResultView.swift */,
@@ -207,6 +210,7 @@
 				772EC96323B8518900D29E36 /* AppDelegate.swift in Sources */,
 				77D252AF23E03B3A0058C470 /* AnsView.swift in Sources */,
 				77BCC6B523BC7710002009C1 /* ButtonStyle.swift in Sources */,
+				77DAE08A23E40F440062D846 /* SettingView.swift in Sources */,
 				77D252AD23E034030058C470 /* ResultView.swift in Sources */,
 				772EC97823B8543000D29E36 /* MainView.swift in Sources */,
 				77BCC6B123BC62DA002009C1 /* PadView.swift in Sources */,
