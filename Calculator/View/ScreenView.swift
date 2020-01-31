@@ -27,7 +27,6 @@ struct ScreenView: View {
                 }) {
                     Image(systemName: "slider.horizontal.3")
                         .imageScale(.large)
-                        .foregroundColor(Color("Operator"))
                 }
             }
 
@@ -56,7 +55,6 @@ struct ScreenView: View {
                     }) {
                         Image(systemName: "trash.fill")
                             .imageScale(.large)
-                            .foregroundColor(Color("Operator"))
                             .padding(.vertical)
                     }
                 }
@@ -71,6 +69,7 @@ struct ScreenView_Previews: PreviewProvider {
         ScreenView()
             .environmentObject(Processor())
             .padding()
+            .accentColor(Color("Accent"))
     }
 }
 #endif

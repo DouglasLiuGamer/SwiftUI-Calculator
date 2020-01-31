@@ -58,7 +58,7 @@ struct EquationView: View {
     private func tokenColor(_ type: Token.TokenType) -> Color {
         switch type {
         case .number, .ans:
-            return Color("Text")
+            return Color("Operand")
         case .opt:
             return Color("Operator")
         case .lparen, .rparen:

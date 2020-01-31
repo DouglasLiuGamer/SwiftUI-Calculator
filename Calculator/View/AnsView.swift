@@ -18,7 +18,7 @@ struct AnsView: View {
 
         if let ans = ans {
             display =
-                Text("ANS").foregroundColor(Color("Text"))
+                Text("ANS").foregroundColor(Color("Operand"))
             +
                 Text("=").foregroundColor(Color("Operator"))
 
@@ -31,7 +31,7 @@ struct AnsView: View {
             }
 
             display = display + Text(text)
-                .foregroundColor(Color("Text"))
+                .foregroundColor(Color("Operand"))
         }
 
         return display

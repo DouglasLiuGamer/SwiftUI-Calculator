@@ -37,7 +37,7 @@ struct ResultView: View {
 
         return Text(text)
             .font(Font.system(size: 35, weight: .bold, design: .monospaced))
-            .foregroundColor(Color("Text"))
+            .foregroundColor(Color("Operand"))
             .frame(maxWidth: .infinity, alignment: .leading)
     }
 }

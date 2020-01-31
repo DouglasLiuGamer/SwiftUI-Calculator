@@ -22,6 +22,7 @@ struct MainView: View {
                     .frame(height: geometry.size.height * 0.6)
                     .padding()
             }
+            .accentColor(Color("Accent"))
         }
     }
 }

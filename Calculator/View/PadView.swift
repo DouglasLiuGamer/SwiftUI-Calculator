@@ -15,13 +15,6 @@ struct PadView: View {
         VStack {
             HStack {
                 TextButton(
-                    symbol: "ANS",
-                    disabled: processor.isDisabled(symbol: "ANS")
-                ).buttonStyle(
-                    OperantButtonStyle(disabled: processor.isDisabled(symbol: "ANS"))
-                )
-
-                TextButton(
                     symbol: "(",
                     disabled: processor.isDisabled(symbol: "(")
                 ).buttonStyle(
@@ -33,6 +26,14 @@ struct PadView: View {
                     disabled: processor.isDisabled(symbol: ")")
                 ).buttonStyle(
                     ParenButtonStyle(disabled: processor.isDisabled(symbol: ")"))
+                )
+
+                ImageButton(
+                    symbol: "<",
+                    imageName: "delete.left",
+                    disabled: processor.isDisabled(symbol: "<")
+                ).buttonStyle(
+                    OperatorButtonStyle(disabled: processor.isDisabled(symbol: "<"))
                 )
 
                 ImageButton(
@@ -135,6 +136,13 @@ struct PadView: View {
             }
             HStack {
                 TextButton(
+                    symbol: "ANS",
+                    disabled: processor.isDisabled(symbol: "ANS")
+                ).buttonStyle(
+                    OperantButtonStyle(disabled: processor.isDisabled(symbol: "ANS"))
+                )
+
+                TextButton(
                     symbol: "0",
                     disabled: processor.isDisabled(symbol: "0")
                 ).buttonStyle(
@@ -146,14 +154,6 @@ struct PadView: View {
                     disabled: processor.isDisabled(symbol: ".")
                 ).buttonStyle(
                     OperantButtonStyle(disabled: processor.isDisabled(symbol: "."))
-                )
-
-                ImageButton(
-                    symbol: "<",
-                    imageName: "delete.left",
-                    disabled: processor.isDisabled(symbol: "<")
-                ).buttonStyle(
-                    OperatorButtonStyle(disabled: processor.isDisabled(symbol: "<"))
                 )
 
                 ImageButton(
