@@ -1,0 +1,9 @@
+/* 
+  InfoPlist.strings
+  Calculator
+
+  Created by Douglas Liu on 1/2/2020.
+  Copyright © 2020 Douglas Liu. All rights reserved.
+*/
+
+"CFBundleDisplayName" = "Calculator";

@@ -25,6 +25,7 @@
 		77D252AF23E03B3A0058C470 /* AnsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77D252AE23E03B3A0058C470 /* AnsView.swift */; };
 		77DAE08A23E40F440062D846 /* SettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77DAE08923E40F440062D846 /* SettingView.swift */; };
 		77FE511523E58053005FE06E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 77FE511723E58053005FE06E /* Localizable.strings */; };
+		77FE514723E5A781005FE06E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 77FE514923E5A781005FE06E /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,9 @@
 		77FE511623E58053005FE06E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		77FE511D23E58448005FE06E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		77FE514423E5934C005FE06E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		77FE514823E5A781005FE06E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		77FE514A23E5A787005FE06E /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
+		77FE514B23E5A788005FE06E /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				77FE511723E58053005FE06E /* Localizable.strings */,
+				77FE514923E5A781005FE06E /* InfoPlist.strings */,
 			);
 			path = l18n;
 			sourceTree = "<group>";
@@ -209,6 +214,7 @@
 				77FE511523E58053005FE06E /* Localizable.strings in Resources */,
 				772EC96C23B8518A00D29E36 /* Preview Assets.xcassets in Resources */,
 				772EC96923B8518A00D29E36 /* Assets.xcassets in Resources */,
+				77FE514723E5A781005FE06E /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -255,6 +261,16 @@
 				77FE514423E5934C005FE06E /* zh-Hant */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		77FE514923E5A781005FE06E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				77FE514823E5A781005FE06E /* en */,
+				77FE514A23E5A787005FE06E /* zh-Hans */,
+				77FE514B23E5A788005FE06E /* zh-Hant */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

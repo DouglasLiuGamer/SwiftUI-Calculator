@@ -30,7 +30,7 @@ class Processor: ObservableObject {
     }
     @Published var allowVibration = UserDefaults.standard.bool(forKey: "Vibration") {
         didSet {
-            UserDefaults.standard.set(self.precision, forKey: "Vibration")
+            UserDefaults.standard.set(self.allowVibration, forKey: "Vibration")
         }
     }
 
