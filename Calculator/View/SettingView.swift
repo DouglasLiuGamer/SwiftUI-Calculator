@@ -35,7 +35,7 @@ struct SettingView: View {
 
             Spacer()
 
-            Text("Swipe Down to Exit")
+            Text("Swipe Down to Return")
                 .font(.caption)
                 .foregroundColor(.gray)
                 .padding(.bottom, 5)

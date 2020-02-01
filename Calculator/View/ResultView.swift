@@ -10,29 +10,26 @@ import SwiftUI
 
 struct ResultView: View {
     var body: some View {
-        var text = ""
+        var display = Text("")
 
         if let result = processor.ans {
-            text = String(format: "%.\(processor.precision)f", result)
-
-            if result.isNaN {
-                text = "NaN"
-            } else if result.isInfinite {
-                text = text.replacingOccurrences(
-                    of: "inf",
-                    with: "INFINITY"
-                )
+            if result.isNaN || result.isInfinite {
+                display = Text("ERROR")
             } else {
+                var text = String(format: "%.\(processor.precision)f", result)
+
                 while text.last == "0" {
                     text.removeLast()
                 }
                 if text.last == "." {
                     text.removeLast()
                 }
+
+                display = Text(text)
             }
         }
 
-        return Text(text)
+        return display
             .font(Font.system(size: 35, weight: .bold, design: .monospaced))
             .foregroundColor(Color("Operand"))
             .frame(maxWidth: .infinity, alignment: .leading)

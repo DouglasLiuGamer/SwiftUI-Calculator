@@ -1,0 +1,14 @@
+/* 
+  Localizable.strings
+  Calculator
+
+  Created by Douglas Liu on 1/2/2020.
+  Copyright © 2020 Douglas Liu. All rights reserved.
+*/
+
+"ERROR" = "错误";
+
+"Settings" = "设置";
+"Vibration" = "震动反馈";
+"Numeric Precision: %lld" = "浮点数精度：%lld";
+"Swipe Down to Return" = "下滑返回";
