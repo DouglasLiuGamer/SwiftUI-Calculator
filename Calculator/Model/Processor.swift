@@ -123,7 +123,7 @@ class Processor: ObservableObject {
             }
         case "ANS":
             if ans != nil {
-                return ans!.isNaN || ans!.isInfinite
+                return (ans!.isNaN || ans!.isInfinite) && prevAns == nil
             } else {
                 return prevAns == nil
                     || tokens.last?.type == .number
@@ -179,9 +179,7 @@ class Processor: ObservableObject {
 
     private func clearIfAns() {
         if ans != nil {
-            if ans!.isNaN || ans!.isInfinite {
-                prevAns = nil
-            } else {
+            if !ans!.isNaN && !ans!.isInfinite {
                 prevAns = ans
             }
             resetEquation()
