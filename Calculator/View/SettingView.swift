@@ -10,13 +10,13 @@ import SwiftUI
 
 struct SettingView: View {
     var body: some View {
-        VStack(spacing: 0) {
+        VStack() {
             Text("Settings")
                 .font(.largeTitle)
                 .fontWeight(.black)
-                .foregroundColor(Color("Accent"))
+                .foregroundColor(Color("Operand"))
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.bottom)
+                .padding(.vertical)
 
             Toggle(isOn: $processor.allowVibration) {
                 Text("Vibration")
