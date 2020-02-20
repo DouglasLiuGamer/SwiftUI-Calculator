@@ -20,7 +20,7 @@ struct ScreenView: View {
                     self.showSettings = true
                 }) {
                     Image(systemName: "slider.horizontal.3")
-                        .imageScale(.large)
+                        .font(.system(size: 22))
                 }
                 .sheet(isPresented: $showSettings) {
                     SettingView()
@@ -42,7 +42,7 @@ struct ScreenView: View {
                         self.processor.resetEquation()
                     }) {
                         Image(systemName: "trash.fill")
-                            .imageScale(.large)
+                            .font(.system(size: 22))
                             .padding(.vertical)
                     }
                 }

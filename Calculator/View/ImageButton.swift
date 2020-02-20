@@ -23,7 +23,7 @@ struct ImageButton: View {
             }
         }) {
             Image(systemName: self.imageName)
-                .imageScale(.large)
+                .font(.system(size: 22))
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
     }
