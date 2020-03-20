@@ -1,7 +1,7 @@
 # **SwiftUI-Calculator**
 A simple and elegant iOS calculator, developed with SwiftUI.
 
-![screenshot](screenshot.jpg)
+![screenshot](screenshot.png)
 
 ## **Author**
 **Douglas Liu** \
