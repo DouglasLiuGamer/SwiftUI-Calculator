@@ -12,8 +12,6 @@ This is a small project I built when I was learning SwiftUI. Since it is mostly 
 
 *Nobody will pay for this*, not even myself, and I currently don't have an extra $99 for the Apple Developer Program, so I don't bother putting this on the AppStore. So right now, enjoy your visit :)
 
-For a more detailed description, please visit <https://douglasliugamer.github.io/SwiftUI-Calculator/>
-
 ## **Functionalities**
 
 ### **Full Equation Support**
